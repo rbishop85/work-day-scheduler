@@ -30,15 +30,20 @@
     </header>
     <div class="container" id="container">
       <!-- Timeblocks go here -->
-      <div class="row time-block">
-        <div class="hour col-12 col-md-1">
-        ${time}
+      <div class="row time-block past">
+        <div class="hour col-12 col-md-1 d-flex align-items-end">
+        <!-- ${time} -->
+        8AM
         </div>
         <!-- <div class="col-10"> -->
-        <textarea class="col-10">${data from local storage}</textarea>
+        <textarea class="col-10">
+          ${data from local storage}
+        </textarea>
         <!-- </div> -->
         <!-- <div> -->
-        <button data-hour="9" class="saveBtn" class="col-5">save</button>
+        <button data-hour="9" class="saveBtn col-1 d-flex justify-content-center align-items-center">
+          <i class="fas fa-save"></i>
+        </button>
         <!-- </div> -->
       </div>
     </div>
