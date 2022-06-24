@@ -19,8 +19,8 @@ All css already written in css file, disect it to try and find planned html layo
 
 // Declare current time
   // date.now for vanilla javascript
-// query current day element and tie to a declared variable
-// query container element and tie to declared variable
+<!-- // query current day element and tie to a declared variable -->
+<!-- // query container element and tie to declared variable -->
   // This is where you'll render time blocks
   // add an id to container item to make easier
 

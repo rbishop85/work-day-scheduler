@@ -28,8 +28,19 @@
       <p class="lead">A simple calendar app for scheduling your work day</p>
       <p id="currentDay" class="lead"></p>
     </header>
-    <div class="container">
+    <div class="container" id="container">
       <!-- Timeblocks go here -->
+      <div class="row time-block">
+        <div class="hour col-12 col-md-1">
+        ${time}
+        </div>
+        <!-- <div class="col-10"> -->
+        <textarea class="col-10">${data from local storage}</textarea>
+        <!-- </div> -->
+        <!-- <div> -->
+        <button data-hour="9" class="saveBtn" class="col-5">save</button>
+        <!-- </div> -->
+      </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
