@@ -22,7 +22,7 @@ All css already written in css file, disect it to try and find planned html layo
 <!-- // query current day element and tie to a declared variable -->
 <!-- // query container element and tie to declared variable -->
   // This is where you'll render time blocks
-  // add an id to container item to make easier
+  <!-- // add an id to container item to make easier -->
 
 // Render a block for each hour of the day and append to container
  // for( i = 9; i <= 17; i++>) cycle from 9am to 5pm
