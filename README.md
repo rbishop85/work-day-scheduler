@@ -28,5 +28,7 @@ All css already written in css file, disect it to try and find planned html layo
 
 // save an hour to local storage
 
+// Declare current hour
 
+// From the clicked button, traverse the DOM to the nearby <textarea> to fetch it's value
 

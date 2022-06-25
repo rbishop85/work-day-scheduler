@@ -1,7 +1,7 @@
 // Current Day element from html file
 var currentDayEl = $("#currentDay");
 // Time to store current time <-- playing with options, not fully setup, currently static
-var currentTime = 10;
+var currentHour = moment().format("H");
 // Container Element from html file
 var containerEl = $("#container");
 // Array containing hours available
@@ -12,6 +12,12 @@ var i = 0;
 var blockTime = 0;
 
 var tense = "";
+
+currentDayEl.text(moment().format("MMM Do, YYYY"));
+
+// window.setInterval(function () {
+//     currentDayEl.html(moment().format('dddd MM/DD/YYYY H:mm:ss'))
+// }, 1000);
 
 function DaySchedulerInit() {
     console.log("Work Day Scheduler is running!")
@@ -24,23 +30,12 @@ function DaySchedulerInit() {
 
 DaySchedulerInit();
 
-containerEl.on("click", function(event) {
-    if (event.target.matches("i")) {
-
-        console.log("Content Saved!");
-
-        var tempButtonHour = event.target.getAttribute("data-hour");
-
-        var key = (tempButtonHour + "-hour");
-        console.log(key);
-
-        var tempTextBox = document.getElementById(tempButtonHour);
-
-        var value = $(tempTextBox).val();
-        console.log(value);
-
-        localStorage.setItem(key, value);
-    }
+containerEl.on("click", "i", function(event) {
+    var tempButtonHour = event.target.getAttribute("data-hour");
+    var key = (tempButtonHour + "-hour");
+    var tempTextBox = document.getElementById(tempButtonHour);
+    var value = $(tempTextBox).val();
+    localStorage.setItem(key, value);
 });
 
 function insertTimeBlock() {
@@ -64,9 +59,9 @@ function printBlockTime() {
 }
 
 function determineTense() {
-    if (workHoursArray[i] < currentTime) {
+    if (workHoursArray[i] < currentHour) {
         tense = "past";
-    } else if (workHoursArray[i] === currentTime) {
+    } else if (workHoursArray[i] == currentHour) {
         tense = "present";
     } else {
         tense = "future";
