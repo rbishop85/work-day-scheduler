@@ -1,6 +1,6 @@
 // Current Day element from html file
 var currentDayEl = $("#currentDay");
-// Time to store current time <-- playing with options, not fully setup
+// Time to store current time <-- playing with options, not fully setup, currently static
 var currentTime = 10;
 // Container Element from html file
 var containerEl = $("#container");
@@ -25,8 +25,13 @@ function DaySchedulerInit() {
 DaySchedulerInit();
 
 containerEl.on("click", function(event) {
-    if (event.target.matches(".saveBtn")) {
+    if (event.target.matches("i")) {
         console.log("Content Saved!");
+        var tempButtonHour = event.target.getAttribute("data-hour");
+        console.log(tempButtonHour + "-hour");
+        var tempTextBox = document.getElementById(tempButtonHour);
+        var tempTextBoxValue = $(tempTextBox).val();
+        console.log(tempTextBoxValue);
     }
 });
 
@@ -34,8 +39,8 @@ function insertTimeBlock() {
     containerEl.append(`
     <div class="row time-block">
         <div class="hour  col-md-2 d-flex justify-content-center align-items-center">${blockTime}</div>
-        <textarea class="col-11 col-md-9 ${tense}"></textarea>
-        <button data-hour="9" class="saveBtn col-1 d-flex justify-content-center align-items-center"><i class="fas fa-save"></i></button>
+        <textarea class="col-11 col-md-9 ${tense}" id="${workHoursArray[i]}"></textarea>
+        <button data-hour="${workHoursArray[i]}" class="saveBtn col-1 d-flex justify-content-center align-items-center"><i class="fas fa-save" data-hour="${workHoursArray[i]}"></i></button>
     </div>
     `)
 }
