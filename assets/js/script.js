@@ -24,6 +24,12 @@ function DaySchedulerInit() {
 
 DaySchedulerInit();
 
+containerEl.on("click", function(event) {
+    if (event.target.matches(".saveBtn")) {
+        console.log("Content Saved!");
+    }
+});
+
 function insertTimeBlock() {
     containerEl.append(`
     <div class="row time-block">
