@@ -26,12 +26,20 @@ DaySchedulerInit();
 
 containerEl.on("click", function(event) {
     if (event.target.matches("i")) {
+
         console.log("Content Saved!");
+
         var tempButtonHour = event.target.getAttribute("data-hour");
-        console.log(tempButtonHour + "-hour");
+
+        var key = (tempButtonHour + "-hour");
+        console.log(key);
+
         var tempTextBox = document.getElementById(tempButtonHour);
-        var tempTextBoxValue = $(tempTextBox).val();
-        console.log(tempTextBoxValue);
+
+        var value = $(tempTextBox).val();
+        console.log(value);
+
+        localStorage.setItem(key, value);
     }
 });
 
