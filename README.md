@@ -21,6 +21,7 @@ Comments, suggestions and constructive criticism always welcome.
 * [Skills/Concepts Used](#skillsconcepts-used)
 * [Steps Taken](#steps-taken)
 * [Thoughts/Future Ideas](#thoughtsfuture-ideas)
+* [Links](#links)
 
 ---
 
@@ -92,6 +93,17 @@ Comments, suggestions and constructive criticism always welcome.
 ## Thoughts/Future Ideas:
 
 This was a fun simpler project.  In the future I'd like spend more time customizing the styling.  I'd also like to add individual clear data buttons to each time block.  To make this app more usefull I'd also like to see it expanded beyond a simple one day app to actually work alongside a full length calendar that allows you to view/edit either the current day or past/future days.
+
+---
+
+## Links:
+[Bootstrap](https://getbootstrap.com/)
+
+[jQuery](https://jquery.com/)
+
+[Moments.js](https://momentjs.com/)
+
+[Font Awesome](https://fontawesome.com/)
 
 ---
 
