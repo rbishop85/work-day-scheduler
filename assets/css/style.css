@@ -4,6 +4,7 @@ body {
   line-height: 1;
 }
 
+/* Text input/display area of time blocks */
 textarea {
   background: transparent;
   border: none;
@@ -13,16 +14,17 @@ textarea {
   padding: 10px;
 }
 
+/* Page Header */
 .jumbotron {
   text-align: center;
   background-color: grey;
   color: black;
   border-radius: 0;
   border-bottom: 10px solid black;
-  /* Testing Temporary info display */
   margin-bottom: 0px;
 }
 
+/* Formatting for status display when saving data to local storage */
 #info {
   height: 32px;
   text-align: center;
@@ -51,6 +53,7 @@ textarea {
   white-space: pre-wrap;
 }
 
+/* Each block of time in the scheduler */
 .time-block {
   text-align: center;
   border-radius: 15px;
@@ -62,27 +65,32 @@ textarea {
   border-top: 1px solid white;
 }
 
+/* Hour display for time blocok */
 .hour {
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
 }
 
+/* past tense schedule items */
 .past {
   background-color: #d3d3d3;
   color: rgb(0, 0, 0);
 }
 
+/* current schedule item */
 .present {
   background-color: #ff6961;
   color: rgb(0, 0, 0);
 }
 
+/* future schedule items */
 .future {
   background-color: #77dd77;
   color: rgb(0, 0, 0);
 }
 
+/* Save button for storing schedule info in Local Storage */
 .saveBtn {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
