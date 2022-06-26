@@ -4,6 +4,9 @@ var currentDayEl = $("#currentDay");
 var currentHour = moment().format("H");
 // Container Element from html file
 var containerEl = $("#container");
+
+var jumbotronEl = $(".jumbotron");
+
 // Array containing hours available
 var workHoursArray = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
 
@@ -35,11 +38,24 @@ containerEl.on("click", "i, button", function(event) {
     localStorage.setItem(("hour-" + buttonHour), $("#" + buttonHour).val());
 });
 
+jumbotronEl.on("click", "#clearSchedule", function(event) {
+    if(!confirm("Do you want to clear all entries?")) {
+        event.preventDefault();
+    } else {
+        localStorage.clear();
+        location.reload();
+    }
+});
+
 function insertTimeBlock() {
+    var existingItem = localStorage.getItem("hour-" + workHoursArray[i]);
+    if (existingItem === null){
+        existingItem = "";
+    }
     containerEl.append(`
     <div class="row time-block">
         <div class="hour  col-md-2 d-flex justify-content-center align-items-center">${blockTime}</div>
-        <textarea class="col-11 col-md-9 ${tense}" id="${workHoursArray[i]}"></textarea>
+        <textarea class="col-11 col-md-9 ${tense}" id="${workHoursArray[i]}">${existingItem}</textarea>
         <button data-hour="${workHoursArray[i]}" class="saveBtn col-1 d-flex justify-content-center align-items-center"><i class="fas fa-save" data-hour="${workHoursArray[i]}"></i></button>
     </div>
     `)
