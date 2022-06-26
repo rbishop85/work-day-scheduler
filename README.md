@@ -97,13 +97,14 @@ This was a fun simpler project.  In the future I'd like spend more time customiz
 ---
 
 ## Links:
-[Bootstrap](https://getbootstrap.com/)
 
-[jQuery](https://jquery.com/)
+<a href="https://getbootstrap.com/" target="_blank">Bootstrap</a>
 
-[Moments.js](https://momentjs.com/)
+<a href="https://jquery.com/" target="_blank">jQuery</a>
 
-[Font Awesome](https://fontawesome.com/)
+<a href="https://momentjs.com/" target="_blank">Moments.js</a>
+
+<a href="https://fontawesome.com/" target="_blank">Font Awesome</a>
 
 ---
 
