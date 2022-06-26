@@ -19,8 +19,18 @@ textarea {
   color: black;
   border-radius: 0;
   border-bottom: 10px solid black;
+  /* Testing Temporary info display */
+  margin-bottom: 0px;
 }
 
+#info {
+  height: 32px;
+  text-align: center;
+  padding: 5px;
+  color:rgb(0, 157, 58)
+}
+
+/* Formatting for clear schedule button */
 #clearSchedule {
   background-color: Red;
   color: white;
@@ -33,7 +43,6 @@ textarea {
   box-shadow: 0 0 10px black inset, 5px 5px 5px black;
 }
 
-/* Button text shrinks from default value when clicked. */
 #clearSchedule:active {
   font-size: 1.1rem;
 }
