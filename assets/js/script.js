@@ -13,11 +13,11 @@ var blockTime = 0;
 
 var tense = "";
 
-currentDayEl.text(moment().format("MMM Do, YYYY"));
-
-// window.setInterval(function () {
-//     currentDayEl.html(moment().format('dddd MM/DD/YYYY H:mm:ss'))
-// }, 1000);
+// Clock for top of page.  Ran a static moment pull first so it shows up instantly, then ran the setinterval on the time so that after the first second it's repeating the pull every second.  I did this because I didn't like how the setinterval left the clock area blank until the first second had passed.
+currentDayEl.text(moment().format("dddd MM/DD/YYYY h:mm:ssa"));
+window.setInterval(function () {
+    currentDayEl.html(moment().format('dddd MM/DD/YYYY h:mm:ssa'))
+}, 1000);
 
 function DaySchedulerInit() {
     console.log("Work Day Scheduler is running!")
