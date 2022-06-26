@@ -1,17 +1,16 @@
-// Current Day element from html file
+// Clock placement element from html file
 var currentDayEl = $("#currentDay");
-// Time to store current time <-- playing with options, not fully setup, currently static
-var currentHour = moment().format("H");
 // Container Element from html file
 var containerEl = $("#container");
-
+// Header element from html file
 var jumbotronEl = $(".jumbotron");
-
+// Current hour for determining whether scheduled items are in the past, present or future
+var currentHour = moment().format("H");
 // Array containing hours available
 var workHoursArray = [8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
-
+// Variable for determining which item in the hours array we're working with
 var i = 0;
-
+// 
 var blockTime = 0;
 
 var tense = "";
@@ -25,7 +24,7 @@ window.setInterval(function () {
 function DaySchedulerInit() {
     console.log("Work Day Scheduler is running!")
     for( i = 0; i < workHoursArray.length; i++) {
-        printBlockTime();
+        blockTime = moment(workHoursArray[i], "H").format("hA");
         determineTense();
         insertTimeBlock();
     }
@@ -47,6 +46,16 @@ jumbotronEl.on("click", "#clearSchedule", function(event) {
     }
 });
 
+function determineTense() {
+    if (workHoursArray[i] < currentHour) {
+        tense = "past";
+    } else if (workHoursArray[i] == currentHour) {
+        tense = "present";
+    } else {
+        tense = "future";
+    }
+}
+
 function insertTimeBlock() {
     var existingItem = localStorage.getItem("hour-" + workHoursArray[i]);
     if (existingItem === null){
@@ -61,22 +70,4 @@ function insertTimeBlock() {
     `)
 }
 
-function printBlockTime() {
-    if(workHoursArray[i] < 12){
-        blockTime = (workHoursArray[i] + "AM");
-    } else if(workHoursArray[i] === 12) {
-        blockTime = "12PM";
-    } else {
-        blockTime = ((workHoursArray[i] - 12) + "PM")
-    }
-}
 
-function determineTense() {
-    if (workHoursArray[i] < currentHour) {
-        tense = "past";
-    } else if (workHoursArray[i] == currentHour) {
-        tense = "present";
-    } else {
-        tense = "future";
-    }
-}
