@@ -30,9 +30,9 @@ function DaySchedulerInit() {
 
 DaySchedulerInit();
 
-containerEl.on("click", "i", function(event) {
+containerEl.on("click", "i, button", function(event) {
     var tempButtonHour = event.target.getAttribute("data-hour");
-    var key = (tempButtonHour + "-hour");
+    var key = ("hour-" + tempButtonHour);
     var tempTextBox = document.getElementById(tempButtonHour);
     var value = $(tempTextBox).val();
     localStorage.setItem(key, value);
